@@ -60,3 +60,12 @@ github "xquartz",     "1.2.1"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
+
+#github "iterm2", "2.0.0", :repo => "boxen/puppet-iterm2"
+
+github "chrome"
+github "onepassword"
+github "vagrant"
+github "virtualbox"
+github "iterm2"
+github "dropbox"
