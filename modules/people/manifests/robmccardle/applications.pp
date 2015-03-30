@@ -17,7 +17,7 @@ class people::robmccardle::applications {
     source => 'sergeche/emmet-sublime'
   }
 
-  include adobe_creative_cloud
+  #include adobe_creative_cloud
   include skype
   include php
 }
