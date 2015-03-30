@@ -2,8 +2,9 @@ class people::robmccardle::applications {
   include chrome
   include onepassword
   include onepassword::chrome
+  include iterm2::stable 
+  include firefox
   include sourcetree
-  include iterm2::stable
   include dropbox
   include spectacle
   include vlc
