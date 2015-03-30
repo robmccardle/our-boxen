@@ -75,6 +75,7 @@ github "sublime_text_2"
 github "sourcetree"
 github "skype"
 github "vlc"
+github "java"
 
 # Deps for PHP
 github "wget"
