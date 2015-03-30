@@ -2,7 +2,6 @@ class people::robmccardle::applications {
   include chrome
   include onepassword
   include onepassword::chrome
-  include firefox
   include sourcetree
   include iterm2::stable
   include dropbox
