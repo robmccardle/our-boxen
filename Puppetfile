@@ -68,13 +68,21 @@ github "onepassword"
 github "vagrant"
 github "virtualbox"
 github "dropbox"
-github "wget"
 github "nmap"
 github "spectacle"
 github "firefox"
 github "sublime_text_2"
 github "sourcetree"
 github "skype"
-github "php"
 github "vlc"
+
+# Deps for PHP
+github "wget"
+github "autoconf"
+github "libtool"
+github "pcre"
+github "libpng"
+github "mysql"
+
+github "php"
 
