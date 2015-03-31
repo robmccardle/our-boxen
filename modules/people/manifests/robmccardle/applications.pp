@@ -11,14 +11,9 @@ class people::robmccardle::applications {
   include phantomjs
   include nmap
   include sublime_text_2
-
-  # For the latest version of v2
-#  include sublime_text::v2
-#  sublime_text::v2::package { 'Emmet':
-#    source => 'sergeche/emmet-sublime'
-#  }
-
-  #include adobe_creative_cloud
   include skype
   include php
+  include brewcask
+  include virtualbox
+  package { 'evernote': provider => 'brewcask' }
 }
