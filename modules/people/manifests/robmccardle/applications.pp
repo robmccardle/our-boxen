@@ -15,5 +15,4 @@ class people::robmccardle::applications {
   include php
   include brewcask
   include virtualbox
-  package { 'evernote': provider => 'brewcask' }
 }
