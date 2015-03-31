@@ -77,7 +77,7 @@ github "sourcetree"
 github "skype"
 github "vlc"
 github "java"
-github "mongodb"
+github "mongodb", "1.3.3"
 
 # Deps for PHP
 github "wget"
