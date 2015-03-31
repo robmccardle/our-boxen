@@ -13,6 +13,7 @@ class people::robmccardle::applications {
   include sublime_text_2
   include skype
   include php
-  include brewcask
+  include mongodb
+  #include brewcask
   include virtualbox
 }
