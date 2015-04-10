@@ -93,9 +93,9 @@ class people::robmccardle::applications {
   
 
   # Set the global default ruby (auto-installs it if it can)
-  class { 'ruby::global':
-    version => '1.9.3'
-  }
+  #class { 'ruby::global':
+  #  version => '1.9.3'
+  #}
 
   # Ensure bundler gem is installed for all ruby versions
   ruby_gem { 'bundler for all rubies':
