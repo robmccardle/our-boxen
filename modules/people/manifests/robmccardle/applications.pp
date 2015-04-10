@@ -15,7 +15,7 @@ class people::robmccardle::applications {
   include mongodb
   include brewcask
   include virtualbox
-  #include osx
+  include osx::all
   
   # 1.) These items should be split out as 'team' config
 
