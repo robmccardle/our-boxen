@@ -41,7 +41,7 @@ class people::robmccardle::applications {
     }
   
     # Set the global default nodejs version
-    class { 'nodejs::global': version => 'v0.10' }
+    #class { 'nodejs::global': version => 'v0.10' }
   
     # Firefox is only updatable when installed via cask
     package { 'firefox': provider => 'brewcask' }
@@ -52,7 +52,7 @@ class people::robmccardle::applications {
     # Evernote is only available via cask
     package { 'evernote': provider => 'brewcask' }
   
-  include osx::finder::show_all_filename_extensions
+  #include osx::finder::show_all_filename_extensions
   include osx::finder::show_warning_before_emptying_trash
 
 #      # Configure Hot Corners
