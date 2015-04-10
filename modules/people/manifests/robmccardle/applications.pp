@@ -16,7 +16,7 @@ class people::robmccardle::applications {
   include brewcask
   include virtualbox
   include osx
-
+  
   # 1.) These items should be split out as 'team' config
 
   
@@ -54,9 +54,9 @@ class people::robmccardle::applications {
   
       # Configure Hot Corners
     class { 'osx::dock::hot_corners':
-      top_left => 'Desktop'
-      top_right => 'Mission Control'
-      bottom_right => 'Application Windows'
+      top_left => 'Desktop',
+      top_right => 'Mission Control',
+      bottom_right => 'Application Windows',
       bottom_left => 'Put Display to Sleep'
     }
   
@@ -65,7 +65,7 @@ class people::robmccardle::applications {
       enabled => true
     }
 
-    #osx::recovery_message { 'If this Mac is found, please call UK number 01628 580058': }
+    osx::recovery_message { 'If this Mac is found, please call UK number 01628 580058': }
   
 
 }
