@@ -20,6 +20,9 @@ class people::robmccardle::applications {
   # 1.) These items should be split out as 'team' config
 
   
+    # Set the global default nodejs version
+    class { 'nodejs::global': version => 'v0.10' }
+  
     # Ensure an additional specific nodejs version (on top of the defaults 6,8,10) is available
 #    nodejs::version { 'v0.12': }
   
@@ -27,12 +30,14 @@ class people::robmccardle::applications {
     $global_nodejs_modules = [
       'grunt-cli',
       'bower',
-        'yo'
+      'yo'
     ]
-  
-    nodejs::module { $global_nodejs_modules :
-      node_version => 'v0.8',
-    }
+
+
+ #   nodejs::module { $global_nodejs_modules :
+ #     node_version => 'v0.8',
+ #   }
+
     nodejs::module { $global_nodejs_modules :
       node_version => 'v0.10',
     }
@@ -41,9 +46,7 @@ class people::robmccardle::applications {
 #      node_version => 'v0.12',
 #    }
   
-    # Set the global default nodejs version
-    #class { 'nodejs::global': version => 'v0.10' }
-  
+    
     # Firefox is only updatable when installed via cask
     package { 'firefox': provider => 'brewcask' }
   
@@ -86,7 +89,26 @@ class people::robmccardle::applications {
 #      enabled => true
 #    }
 
-#    osx::recovery_message { 'If this Mac is found, please call UK number 01628 580058': }
+  #include osx::recovery_message { 'If this Mac is found, please call UK number 01628 580058': }
   
+
+  # Set the global default ruby (auto-installs it if it can)
+  class { 'ruby::global':
+    version => '1.9.3'
+  }
+
+  # Ensure bundler gem is installed for all ruby versions
+  ruby_gem { 'bundler for all rubies':
+    gem          => 'bundler',
+    version      => '~> 1.0',
+    ruby_version => '*',
+  }
+
+  # Ensure specific Capistrano gem is installed for all ruby versions
+  ruby_gem { 'Specific version of Capistrano for all rubies':
+    gem          => 'capistrano',
+    version      => '2.15.5',
+    ruby_version => '*',
+  }
 
 }
