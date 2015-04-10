@@ -15,7 +15,7 @@ class people::robmccardle::applications {
   include mongodb
   include brewcask
   include virtualbox
-  include osx::all
+  include osx
   
   # 1.) These items should be split out as 'team' config
 
@@ -24,19 +24,19 @@ class people::robmccardle::applications {
 #    nodejs::version { 'v0.12': }
   
     # Install global npm modules are installed for the ones we actually use (8,10,12) 
-#    $global_nodejs_modules = [
-#      'grunt-cli',
-#      'bower',
-#      'yo'
-#    ]
+    $global_nodejs_modules = [
+      'grunt-cli',
+      'bower',
+        'yo'
+    ]
   
-#    nodejs::module { $nodejs_modules :
-#      node_version => 'v0.8',
-#    }
-#    nodejs::module { $nodejs_modules :
-#      node_version => 'v0.10',
-#    }
-#    nodejs::module { $nodejs_modules :
+    nodejs::module { $global_nodejs_modules :
+      node_version => 'v0.8',
+    }
+    nodejs::module { $global_nodejs_modules :
+      node_version => 'v0.10',
+    }
+#    nodejs::module { $global_nodejs_modules :
 #      node_version => 'v0.12',
 #    }
   
