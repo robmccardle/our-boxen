@@ -21,24 +21,24 @@ class people::robmccardle::applications {
 
   
     # Ensure an additional specific nodejs version (on top of the defaults 6,8,10) is available
-    nodejs::version { 'v0.12': }
+#    nodejs::version { 'v0.12': }
   
     # Install global npm modules are installed for the ones we actually use (8,10,12) 
-    $global_nodejs_modules = [
-      'grunt-cli',
-      'bower',
-      'yo'
-    ]
+#    $global_nodejs_modules = [
+#      'grunt-cli',
+#      'bower',
+#      'yo'
+#    ]
   
-    nodejs::module { $nodejs_modules :
-      node_version => 'v0.8',
-    }
-    nodejs::module { $nodejs_modules :
-      node_version => 'v0.10',
-    }
-    nodejs::module { $nodejs_modules :
-      node_version => 'v0.12',
-    }
+#    nodejs::module { $nodejs_modules :
+#      node_version => 'v0.8',
+#    }
+#    nodejs::module { $nodejs_modules :
+#      node_version => 'v0.10',
+#    }
+#    nodejs::module { $nodejs_modules :
+#      node_version => 'v0.12',
+#    }
   
     # Set the global default nodejs version
     #class { 'nodejs::global': version => 'v0.10' }
