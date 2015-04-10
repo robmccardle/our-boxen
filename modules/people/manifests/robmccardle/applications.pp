@@ -21,7 +21,7 @@ class people::robmccardle::applications {
 
   
     # Set the global default nodejs version
-    class { 'nodejs::global': version => 'v0.10' }
+    #class { 'nodejs::global': version => 'v0.10' }
   
     # Ensure an additional specific nodejs version (on top of the defaults 6,8,10) is available
 #    nodejs::version { 'v0.12': }
@@ -38,9 +38,9 @@ class people::robmccardle::applications {
  #     node_version => 'v0.8',
  #   }
 
-    nodejs::module { $global_nodejs_modules :
-      node_version => 'v0.10',
-    }
+ #   nodejs::module { $global_nodejs_modules :
+ #     node_version => 'v0.10',
+ #   }
 
 #    nodejs::module { $global_nodejs_modules :
 #      node_version => 'v0.12',
