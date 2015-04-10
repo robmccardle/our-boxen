@@ -49,11 +49,26 @@ class people::robmccardle::applications {
 
   # These items are genuinely personal 'robmccardle' config
 
-    # Evernote is only available via cask
-    package { 'evernote': provider => 'brewcask' }
+  # Evernote is only available via cask
+  package { 'evernote': provider => 'brewcask' }
   
-  #include osx::finder::show_all_filename_extensions
+  #
+  include osx::finder::show_all_filename_extensions
   include osx::finder::show_warning_before_emptying_trash
+  include osx::global::enable_keyboard_control_access
+  include osx::global::expand_print_dialog
+  include osx::global::expand_save_dialog
+  include osx::global::disable_remote_control_ir_receiver
+
+  # Dock Settings
+  include osx::dock::2d
+  include osx::dock::autohide
+  include osx::dock::clear_dock
+  include osx::dock::disable
+  include osx::dock::disable_dashboard
+  include osx::dock::dim_hidden_apps
+  include osx::dock::hide_indicator_lights
+
 
 #      # Configure Hot Corners
 #    class { 'osx::dock::hot_corners':
