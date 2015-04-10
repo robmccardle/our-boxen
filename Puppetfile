@@ -61,13 +61,12 @@ github "xquartz",     "1.2.1"
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
 
-#github "iterm2", "2.0.0", :repo => "boxen/puppet-iterm2"
 github "iterm2"
 github "chrome"
 github "onepassword"
 github "vagrant"
-github "virtualbox",      "1.0.13"
-#github "brewcask", "0.0.6", :repo> "boxen/puppet-brewcask"
+github "virtualbox",        "1.0.13"
+github "brewcask",          "0.0.6"
 github "dropbox"
 github "nmap"
 github "spectacle"
@@ -77,15 +76,15 @@ github "sourcetree"
 github "skype"
 github "vlc"
 github "java"
-github "mongodb", "1.3.3"
+github "mongodb",           "1.3.3"
+github "elasticsearch"
 
-# Deps for PHP
+# Deps all required for PHP
 github "wget"
 github "autoconf"
 github "libtool"
 github "pcre"
 github "libpng"
 github "mysql"
-
 github "php"
 
