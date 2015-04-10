@@ -95,9 +95,9 @@ class people::robmccardle::applications {
   }
 
   # Set the global default ruby (auto-installs it if it can)
-  # class { 'ruby::global':
-  #  version => '1.9.3'
-  # }
+  class { 'ruby::global':
+    version => '1.9.3'
+  }
 
   # Ensure bundler gem is installed for all ruby versions
   ruby_gem { 'bundler for all rubies':
@@ -110,6 +110,13 @@ class people::robmccardle::applications {
   ruby_gem { 'Specific version of Capistrano for all rubies':
     gem          => 'capistrano',
     version      => '2.15.5',
+    ruby_version => '*',
+  }
+
+  # Remove the requirement for typing 'rbenv rehash' after installing gems
+  ruby_gem { 'rbenv-gem-rehash for all rubies':
+    gem          => 'rbenv-gem-rehash',
+    version      => '1.0.0',
     ruby_version => '*',
   }
 
