@@ -38,6 +38,15 @@ class people::robmccardle::applications {
   # Enable OS zoom
   include osx::universal_access::ctrl_mod_zoom
 
+  # Disable the downloaded app quarantine
+  include osx::disable_app_quarantine 
+
+  # Disable creation of .DS_Store files on network shares
+  include osx::no_network_dsstores 
+
+  # Download and install software updates
+  include osx::software_update 
+
 
   # OSX Dock tweaks
 
@@ -77,12 +86,18 @@ class people::robmccardle::applications {
   include osx::finder::show_all_filename_extensions
   include osx::finder::no_file_extension_warnings
 
-
-  # Make the top right corner start the screen saver and the bottom left corner launch Mission Control
+  # OSX 'Hot Corners' mouse over config
   class { 'osx::dock::hot_corners':
-    top_right => "Start Screen Saver",
-    bottom_left => "Mission Control"
+    top_left => "Application Windows",
+    top_right => "Mission Control",
+    bottom_left => "Put Display to Sleep",
+    bottom_right => "Desktop"
   }
+
+  # Set the global default ruby (auto-installs it if it can)
+  # class { 'ruby::global':
+  #  version => '1.9.3'
+  # }
 
   # Ensure bundler gem is installed for all ruby versions
   ruby_gem { 'bundler for all rubies':
