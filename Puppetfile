@@ -78,6 +78,7 @@ github "vlc"
 github "java"
 github "mongodb",           "1.3.3"
 github "elasticsearch"
+github "osx"
 
 # Deps all required for PHP
 github "wget"
