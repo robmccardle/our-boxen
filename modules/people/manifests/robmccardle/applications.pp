@@ -15,7 +15,7 @@ class people::robmccardle::applications {
   include mongodb
   include brewcask
   include virtualbox
-  include osx
+  #include osx
   
   # 1.) These items should be split out as 'team' config
 
@@ -36,6 +36,7 @@ class people::robmccardle::applications {
     nodejs::module { $global_nodejs_modules :
       node_version => 'v0.10',
     }
+
 #    nodejs::module { $global_nodejs_modules :
 #      node_version => 'v0.12',
 #    }
@@ -52,22 +53,24 @@ class people::robmccardle::applications {
   # Evernote is only available via cask
   package { 'evernote': provider => 'brewcask' }
   
-  #
+  
   include osx::finder::show_all_filename_extensions
-  include osx::finder::show_warning_before_emptying_trash
-  include osx::global::enable_keyboard_control_access
-  include osx::global::expand_print_dialog
-  include osx::global::expand_save_dialog
-  include osx::global::disable_remote_control_ir_receiver
+  include osx::finder::unhide_library
+
+  #include osx::finder::show_warning_before_emptying_trash
+  #include osx::global::enable_keyboard_control_access
+  #include osx::global::expand_print_dialog
+  #include osx::global::expand_save_dialog
+  #include osx::global::disable_remote_control_ir_receiver
 
   # Dock Settings
-  include osx::dock::2d
-  include osx::dock::autohide
-  include osx::dock::clear_dock
-  include osx::dock::disable
-  include osx::dock::disable_dashboard
-  include osx::dock::dim_hidden_apps
-  include osx::dock::hide_indicator_lights
+  #include osx::dock::2d
+  #include osx::dock::autohide
+  #include osx::dock::clear_dock
+  #include osx::dock::disable
+  #include osx::dock::disable_dashboard
+  #include osx::dock::dim_hidden_apps
+  #include osx::dock::hide_indicator_lights
 
 
 #      # Configure Hot Corners
