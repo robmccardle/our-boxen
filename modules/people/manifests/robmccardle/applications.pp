@@ -148,7 +148,7 @@ class people::robmccardle::applications inherits people::robmccardle {
   ###########################    Node.js   ###########################
   
   # Install additional more recent node
-  nodejs::version { 'v0.12': }
+  #nodejs::version { 'v0.12.X': }
 
   # set the global nodejs version
   class { 'nodejs::global': 
