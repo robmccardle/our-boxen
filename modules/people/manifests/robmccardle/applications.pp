@@ -16,7 +16,7 @@ class people::robmccardle::applications inherits people::robmccardle {
   include skype
   include php
   include mongodb
-  #include homebrew
+  include homebrew
   include brewcask
   include virtualbox
   include elasticsearch
@@ -31,7 +31,7 @@ class people::robmccardle::applications inherits people::robmccardle {
   package { 'filezilla': provider => 'brewcask' }
   package { 'charles': provider => 'brewcask' }
 
-  #package { 'packer': provider => 'homebrew' }
+  package { 'packer': provider => 'homebrew' }
   #package { 'docker': provider => 'homebrew' }
   #package { 'vagrant': provider => 'homebrew' }
 
