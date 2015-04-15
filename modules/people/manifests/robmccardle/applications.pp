@@ -21,13 +21,11 @@ class people::robmccardle::applications {
   include java
   # Java 6 needed for Charles
   include java6
-  
-  
+    
   package { 'firefox': provider => 'brewcask' }
   package { 'evernote': provider => 'brewcask' }
   package { 'filezilla': provider => 'brewcask' }
   package { 'charles': provider => 'brewcask' }
-
 
 
   # OSX Global tweaks 
@@ -98,10 +96,10 @@ class people::robmccardle::applications {
     bottom_right => "Desktop"
   }
 
-  # Set the global default ruby (auto-installs it if it can)
-  #class { 'ruby::global':
-  #  version => '1.9.3'
-  #}
+  # set the global ruby version
+  class { 'ruby::global': 
+    version => '2.1.2' 
+  }
 
   # Ensure bundler gem is installed for all ruby versions
   ruby_gem { 'bundler for all rubies':
@@ -122,6 +120,7 @@ class people::robmccardle::applications {
     version      => '0.3',
     ruby_version => '*',
   }
+
 
   # set the global nodejs version
   class { 'nodejs::global': 
