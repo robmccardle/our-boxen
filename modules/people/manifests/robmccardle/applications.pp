@@ -20,7 +20,14 @@ class people::robmccardle::applications inherits people::robmccardle {
   include brewcask
   include virtualbox
   include elasticsearch
+  
+  include vagrant
+  include packer
 
+  package { 'docker':
+    ensure => present,
+  }
+  
   # Java 7 needed for Slack
   include java
   # Java 6 needed for Charles
@@ -31,15 +38,6 @@ class people::robmccardle::applications inherits people::robmccardle {
   package { 'filezilla': provider => 'brewcask' }
   package { 'charles': provider => 'brewcask' }
 
-  package { 'packer':
-    ensure => present,
-  }
-  package { 'docker':
-    ensure => present,
-  }
-  package { 'vagrant':
-    ensure => present,
-  }
   
 
   ############################    OSX   ############################
@@ -172,19 +170,19 @@ class people::robmccardle::applications inherits people::robmccardle {
   ############################    PHP/PHP-FPM   ############################
 
   # Install php 5.4
-  #include php::5_4
+  include php::5_4
 
   # Install a couple of specific minor versions
   #include php::5_3_17
   #include php::5_4_11
 
   # Install Composer globally on your PATH
-  #include php::composer
+  include php::composer
 
   # Install a php version and set as the global default php
-  #class { 'php::global':
-  #  version => '5.4.10'
-  #}
+  class { 'php::global':
+    version => '5.4.10'
+  }
 
   # Set up PHP-FPM as a service running a specific version of PHP
   #include php::fpm::5_4_10
