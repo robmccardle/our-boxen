@@ -123,4 +123,22 @@ class people::robmccardle::applications {
     ruby_version => '*',
   }
 
+  # set the global nodejs version
+  class { 'nodejs::global': 
+    version => 'v0.10.31' 
+  }
+
+  # install some npm modules
+  nodejs::module { 'grunt-cli':
+    node_version => 'v0.10.31'
+  }
+  nodejs::module { 'bower':
+    node_version => 'v0.10.31'
+  }
+  nodejs::module { 'yo':
+    node_version => 'v0.10.31'
+  }
+
+
+  
 }
