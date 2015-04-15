@@ -61,7 +61,11 @@ class people::robmccardle::applications {
   include osx::dock::clear_dock
   
   # Disable the dock by setting a long autohide-delay
-  include osx::dock::disable
+  #include osx::dock::disable
+  # Enable the dock 
+  class { 'osx::dock::disable':
+    enabled => false
+  }
   
   # Disable the dashboard
   include osx::dock::disable_dashboard

@@ -76,8 +76,9 @@ github "sourcetree"
 github "skype"
 github "vlc"
 github "java"
+github "java6",             "1.0.0", :repo => "cylentsystems/puppet-java6"
 github "mongodb",           "1.3.3"
-github "elasticsearch"
+github "elasticsearch",     "2.7.1"
 github "osx",               "2.8.0"
 
 # Deps all required for PHP
