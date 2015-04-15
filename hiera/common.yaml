@@ -1,5 +1,2 @@
 # Set everyones global Ruby version using the recommended approach
 ruby::global::version: "2.1.2"
-
-# Set everyones global PHP version 
-php::global::version: "5.4.10"
