@@ -16,6 +16,12 @@ class people::robmccardle::applications {
   include brewcask
   include virtualbox
   include elasticsearch
+
+  # Java 7 needed for Slack
+  include java
+  # Java 6 needed for Charles
+  include java6
+  
   
   package { 'firefox': provider => 'brewcask' }
   package { 'evernote': provider => 'brewcask' }
@@ -62,9 +68,9 @@ class people::robmccardle::applications {
   
   # Disable the dock by setting a long autohide-delay
   #include osx::dock::disable
-  # Enable the dock 
+  # Enable the dock by setting the default value of 1
   class { 'osx::dock::disable':
-    enabled => false
+    value => 1
   }
   
   # Disable the dashboard
