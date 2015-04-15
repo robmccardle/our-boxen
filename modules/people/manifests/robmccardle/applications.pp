@@ -66,13 +66,6 @@ class people::robmccardle::applications {
   # Ensures the dock only contains apps that are running
   include osx::dock::clear_dock
   
-  # Disable the dock by setting a long autohide-delay
-  #include osx::dock::disable
-  # Enable the dock by setting the default value of 1
-  class { 'osx::dock::disable':
-    value => 1
-  }
-  
   # Disable the dashboard
   include osx::dock::disable_dashboard
   
