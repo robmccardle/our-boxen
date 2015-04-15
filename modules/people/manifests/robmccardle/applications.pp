@@ -1,5 +1,5 @@
-class people::robmccardle::applications {
-  
+class people::robmccardle::applications inherits people::robmccardle {
+
 
   ############################    Software   ############################
 
@@ -30,9 +30,10 @@ class people::robmccardle::applications {
   package { 'evernote': provider => 'brewcask' }
   package { 'filezilla': provider => 'brewcask' }
   package { 'charles': provider => 'brewcask' }
-  package { 'packer': provider => 'brew' }
-  package { 'docker': provider => 'brew' }
-  package { 'vagrant': provider => 'brew' }
+
+  package { 'packer': provider => 'homebrew' }
+  package { 'docker': provider => 'homebrew' }
+  package { 'vagrant': provider => 'homebrew' }
 
 
   ############################    OSX   ############################
@@ -182,13 +183,5 @@ class people::robmccardle::applications {
   # Set up PHP-FPM as a service running a specific version of PHP
   include php::fpm::5_4_10
 
-
-  ###########################    Files   ###########################
-
-  # Ensure a Symlink exists to the version controlled bash profile
-  File <| title == "$HOME/.dotfiles/.bash_profile" |> {
-    ensure => 'link',
-    target => "~/.bash_profile"
-  }
   
 }
