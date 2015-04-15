@@ -97,9 +97,15 @@ class people::robmccardle::applications {
   }
 
   # set the global ruby version
-  class { 'ruby::global': 
-    version => '2.1.2' 
-  }
+  #class { 'ruby::global': 
+  #  version => '2.1.2' 
+  #}
+  # Causes
+  # Error: Duplicate declaration: Ruby::Version[2.1.2] is already declared; cannot redeclare at 
+  # /opt/boxen/repo/manifests/site.pp:76 on node robs-macbook-pro.local
+  # Workaround is to manually run this after boxen run
+  #  rbenv global 2.1.2
+
 
   # Ensure bundler gem is installed for all ruby versions
   ruby_gem { 'bundler for all rubies':
