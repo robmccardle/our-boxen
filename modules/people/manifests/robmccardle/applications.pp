@@ -16,7 +16,7 @@ class people::robmccardle::applications inherits people::robmccardle {
   include skype
   include php
   include mongodb
-  include homebrew
+  #include homebrew
   include brewcask
   include virtualbox
   include elasticsearch
@@ -31,9 +31,9 @@ class people::robmccardle::applications inherits people::robmccardle {
   package { 'filezilla': provider => 'brewcask' }
   package { 'charles': provider => 'brewcask' }
 
-  package { 'packer': provider => 'homebrew' }
-  package { 'docker': provider => 'homebrew' }
-  package { 'vagrant': provider => 'homebrew' }
+  #package { 'packer': provider => 'homebrew' }
+  #package { 'docker': provider => 'homebrew' }
+  #package { 'vagrant': provider => 'homebrew' }
 
 
   ############################    OSX   ############################
@@ -144,7 +144,7 @@ class people::robmccardle::applications inherits people::robmccardle {
   ###########################    Node.js   ###########################
   
   # Install additional more recent node
-  nodejs::version { 'v0.12': }
+  #nodejs::version { 'v0.12': }
 
   # set the global nodejs version
   class { 'nodejs::global': 
@@ -166,22 +166,22 @@ class people::robmccardle::applications inherits people::robmccardle {
   ############################    PHP/PHP-FPM   ############################
 
   # Install php 5.4
-  include php::5_4
+  #include php::5_4
 
   # Install a couple of specific minor versions
-  include php::5_3_17
-  include php::5_4_11
+  #include php::5_3_17
+  #include php::5_4_11
 
   # Install Composer globally on your PATH
-  include php::composer
+  #include php::composer
 
   # Install a php version and set as the global default php
-  class { 'php::global':
-    version => '5.4.10'
-  }
+  #class { 'php::global':
+  #  version => '5.4.10'
+  #}
 
   # Set up PHP-FPM as a service running a specific version of PHP
-  include php::fpm::5_4_10
+  #include php::fpm::5_4_10
 
   
 }
