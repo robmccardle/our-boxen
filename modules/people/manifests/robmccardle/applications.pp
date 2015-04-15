@@ -148,7 +148,7 @@ class people::robmccardle::applications inherits people::robmccardle {
   ###########################    Node.js   ###########################
   
   # Install additional more recent node
-  #nodejs::version { 'v0.12.X': }
+  nodejs::version { 'v0.12.2': }
 
   # set the global nodejs version
   class { 'nodejs::global': 
@@ -177,7 +177,7 @@ class people::robmccardle::applications inherits people::robmccardle {
   #include php::5_4_11
 
   # Install Composer globally on your PATH
-  #include php::composer
+  include php::composer
 
   # Install a php version and set as the global default php
   #class { 'php::global':

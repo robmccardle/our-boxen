@@ -1,0 +1,2 @@
+# Set everyones global Ruby version using the recommended approach
+ruby::global::version: "2.1.2"
