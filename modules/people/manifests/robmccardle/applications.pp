@@ -14,16 +14,13 @@ class people::robmccardle::applications inherits people::robmccardle {
   include nmap
   include sublime_text_2
   include skype
-  include php
   include mongodb
   include homebrew
   include brewcask
   include virtualbox
   include elasticsearch
-  
   include vagrant
-  #include packer
-
+  
   package { 'docker':
     ensure => present,
   }
@@ -37,7 +34,6 @@ class people::robmccardle::applications inherits people::robmccardle {
   package { 'evernote': provider => 'brewcask' }
   package { 'filezilla': provider => 'brewcask' }
   package { 'charles': provider => 'brewcask' }
-
   
 
   ############################    OSX   ############################
@@ -167,26 +163,11 @@ class people::robmccardle::applications inherits people::robmccardle {
     node_version => 'v0.10.31'
   }
 
-
-  ############################    PHP/PHP-FPM   ############################
-
-  # Install php 5.4
-  #include php::5_4
+  ###########################    PHP   ###########################
   
-  # Install a couple of specific minor versions
-  include php::5_3_17
-  #include php::5_4_11
-
-  # Install Composer globally on your PATH
+  include php
+  
   include php::composer
-
-  # Install a php version and set as the global default php
-  #class { 'php::global':
-  #  version => '5.4.10'
-  #}
-
-  # Set up PHP-FPM as a service running a specific version of PHP
-  #include php::fpm::5_4_10
 
   
 }
