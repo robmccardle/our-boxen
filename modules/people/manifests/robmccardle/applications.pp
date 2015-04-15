@@ -116,11 +116,10 @@ class people::robmccardle::applications {
     version      => '2.15.5',
     ruby_version => '*',
   }
-
   # Remove the requirement for typing 'rbenv rehash' after installing gems
-  ruby_gem { 'rbenv-gem-rehash for all rubies':
-    gem          => 'rbenv-gem-rehash',
-    version      => '1.0.0',
+  ruby_gem { 'rbenv-rehash for all rubies':
+    gem          => 'rbenv-rehash',
+    version      => '0.3',
     ruby_version => '*',
   }
 
