@@ -26,6 +26,9 @@ class people::robmccardle::applications {
   package { 'evernote': provider => 'brewcask' }
   package { 'filezilla': provider => 'brewcask' }
   package { 'charles': provider => 'brewcask' }
+  package { 'packer': provider => 'brew' }
+  package { 'docker': provider => 'brew' }
+  package { 'vagrant': provider => 'brew' }
 
 
   # OSX Global tweaks 
