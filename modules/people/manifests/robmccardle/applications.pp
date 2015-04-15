@@ -122,6 +122,7 @@ class people::robmccardle::applications inherits people::robmccardle {
   # /opt/boxen/repo/manifests/site.pp:76 on node robs-macbook-pro.local
   # Workaround is to manually run this after boxen run
   #  rbenv global 2.1.2
+  # N.B Now set via Hiera - TODO test on a fresh Mac
 
 
   # Ensure bundler gem is installed for all ruby versions
@@ -170,7 +171,8 @@ class people::robmccardle::applications inherits people::robmccardle {
   ############################    PHP/PHP-FPM   ############################
 
   # Install php 5.4
-  #include php::5_4
+  include php::5_4
+  include php::5_6
 
   # Install a couple of specific minor versions
   #include php::5_3_17
