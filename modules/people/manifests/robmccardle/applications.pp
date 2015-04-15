@@ -31,10 +31,16 @@ class people::robmccardle::applications inherits people::robmccardle {
   package { 'filezilla': provider => 'brewcask' }
   package { 'charles': provider => 'brewcask' }
 
-  package { 'packer': provider => 'homebrew' }
-  #package { 'docker': provider => 'homebrew' }
-  #package { 'vagrant': provider => 'homebrew' }
-
+  package { 'packer':
+    ensure => present,
+  }
+  package { 'docker':
+    ensure => present,
+  }
+  package { 'vagrant':
+    ensure => present,
+  }
+  
 
   ############################    OSX   ############################
 
