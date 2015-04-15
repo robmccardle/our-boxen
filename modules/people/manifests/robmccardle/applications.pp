@@ -1,5 +1,8 @@
 class people::robmccardle::applications {
   
+
+  ############################    Software   ############################
+
   include chrome
   include onepassword
   include iterm2::stable 
@@ -13,6 +16,7 @@ class people::robmccardle::applications {
   include skype
   include php
   include mongodb
+  include homebrew
   include brewcask
   include virtualbox
   include elasticsearch
@@ -30,6 +34,8 @@ class people::robmccardle::applications {
   package { 'docker': provider => 'brew' }
   package { 'vagrant': provider => 'brew' }
 
+
+  ############################    OSX   ############################
 
   # OSX Global tweaks 
   # TODO split into OSX file/class
@@ -99,6 +105,9 @@ class people::robmccardle::applications {
     bottom_right => "Desktop"
   }
 
+  ############################    Ruby   ############################
+
+
   # set the global ruby version
   #class { 'ruby::global': 
   #  version => '2.1.2' 
@@ -131,6 +140,11 @@ class people::robmccardle::applications {
   }
 
 
+  ###########################    Node.js   ###########################
+  
+  # Install additional more recent node
+  nodejs::version { 'v0.12': }
+
   # set the global nodejs version
   class { 'nodejs::global': 
     version => 'v0.10.31' 
@@ -148,5 +162,33 @@ class people::robmccardle::applications {
   }
 
 
+  ############################    PHP/PHP-FPM   ############################
+
+  # Install php 5.4
+  include php::5_4
+
+  # Install a couple of specific minor versions
+  include php::5_3_17
+  include php::5_4_11
+
+  # Install Composer globally on your PATH
+  include php::composer
+
+  # Install a php version and set as the global default php
+  class { 'php::global':
+    version => '5.4.10'
+  }
+
+  # Set up PHP-FPM as a service running a specific version of PHP
+  include php::fpm::5_4_10
+
+
+  ###########################    Files   ###########################
+
+  # Ensure a Symlink exists to the version controlled bash profile
+  File <| title == "$HOME/.dotfiles/.bash_profile" |> {
+    ensure => 'link',
+    target => "~/.bash_profile"
+  }
   
 }
