@@ -22,7 +22,7 @@ class people::robmccardle::applications inherits people::robmccardle {
   include elasticsearch
   
   include vagrant
-  include packer
+  #include packer
 
   package { 'docker':
     ensure => present,
@@ -148,7 +148,7 @@ class people::robmccardle::applications inherits people::robmccardle {
   ###########################    Node.js   ###########################
   
   # Install additional more recent node
-  #nodejs::version { 'v0.12': }
+  nodejs::version { 'v0.12': }
 
   # set the global nodejs version
   class { 'nodejs::global': 
