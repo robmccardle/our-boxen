@@ -171,10 +171,10 @@ class people::robmccardle::applications inherits people::robmccardle {
   ############################    PHP/PHP-FPM   ############################
 
   # Install php 5.4
-  include php::5_4
+  #include php::5_4
   
   # Install a couple of specific minor versions
-  #include php::5_3_17
+  include php::5_3_17
   #include php::5_4_11
 
   # Install Composer globally on your PATH
