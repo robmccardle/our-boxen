@@ -3,7 +3,7 @@ class people::robmccardle {
   	notify { 'class people::robmccardle declared': }
 	
 	include people::robmccardle::applications
-	include people::robmccardle::symlinks
+	include people::robmccardle::dotfiles
 
 	# Set git credentials
 
